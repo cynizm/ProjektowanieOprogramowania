@@ -1,3 +1,4 @@
+
 package business_layer;
 
 import business_layer.entities.Klient;
@@ -100,4 +101,74 @@ public Factory() {
         zad.setOsoba(null); //data[6]
         return zad;
     }
+
+
+
+
+    
+    
+    
+    public Klient createKlient(String data[]) {
+        Klient klient = null;
+        klient = new Klient();
+        klient.setNazwaFirmy(data[0]);
+        klient.setNip(data[1]);
+        klient.setUlica(data[2]);
+        klient.setNrDomu(data[3]);
+        klient.setNrLokalu(data[4]);
+        klient.setMiejscowosc(data[5]);
+        klient.setKodPocztowy(data[6]);
+                
+        
+        return klient;
+    }
+    
+    public Osoba createOsoba(String data[]) {
+        Osoba nowa_osoba = null;
+        switch (Integer.parseInt(data[0])) {
+            case 0: //obiekt ma posluzyc do wyszukania
+                nowa_osoba = new Osoba();
+                nowa_osoba.setEmail(data[1]);
+                break;
+            case 1: //obiekt ma zostac zapamietany
+                nowa_osoba = new Osoba();
+                nowa_osoba.setImie(data[1]);
+                nowa_osoba.setNazwisko(data[2]);
+                nowa_osoba.setEmail(data[3]);
+                nowa_osoba.setIdProjektu(Integer.parseInt(data[4]));
+                nowa_osoba.setRola(Rola.fromString(data[5]));
+                break;
+        }
+        return nowa_osoba;
+    }
+    public Projekt createProjekt(String[] data ){
+        Projekt projekt = new Projekt();
+        projekt.setNazwa(data[0]);
+        projekt.setData_rozpoczecia(new Date());
+        projekt.setData_zakonczenia(null);
+        projekt.setStatus(Integer.parseInt(data[1]));
+        return projekt;
+    }
+    
+    public Sprint createSprint(String[] data){
+        Sprint sprint = new Sprint();
+        sprint.setNumerSprintu(Integer.parseInt(data[0]));
+        sprint.setDataRozpoczecia(new Date());
+        sprint.setDataZakonczenia(new Date());
+        sprint.zmienStatusSprintu(StatusSprintu.fromString(data[1]));
+        return sprint;
+    }
+    
+    public StanSprintu createStanSprintu(String[] data){
+        StanSprintu stan_sprintu = new StanSprintu();
+        stan_sprintu.setDataAktualizacji( new Date());
+        stan_sprintu.setNumerDniaSprintu(Integer.parseInt(data[0]));
+        stan_sprintu.setIloscZadanNierozpoczetych(Integer.parseInt(data[1]));
+        stan_sprintu.setIloscZadanWAnalizie(Integer.parseInt(data[2]));
+        stan_sprintu.setIloscZadanWImplementacji(Integer.parseInt(data[3]));
+        stan_sprintu.setIloscZadanWTestach(Integer.parseInt(data[4]));
+        stan_sprintu.setIloscZadanZakonczonych(Integer.parseInt(data[5]));
+        return stan_sprintu;
+    }
 }
+

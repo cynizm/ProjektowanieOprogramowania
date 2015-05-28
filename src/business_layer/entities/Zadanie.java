@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 package business_layer.entities;
 
@@ -114,3 +115,19 @@ public class Zadanie {
     }
 
 }
+=======
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package business_layer.entities;
+
+/**
+ *
+ * @author SND
+ */
+public class Zadanie {
+    
+}
+>>>>>>> origin/g1

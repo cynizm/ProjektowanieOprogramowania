@@ -1,21 +1,14 @@
-<<<<<<< HEAD
-=======
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
->>>>>>> origin/g1
 package business_layer;
 
 import business_layer.entities.Klient;
 import business_layer.entities.Osoba;
 import business_layer.entities.Projekt;
 import business_layer.entities.Rola;
-<<<<<<< HEAD
-import business_layer.entities.Ryzyko;
-=======
->>>>>>> origin/g1
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -25,10 +18,6 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-<<<<<<< HEAD
-import java.util.Date;
-=======
->>>>>>> origin/g1
 
 /**
  *
@@ -83,10 +72,7 @@ public class FasadaTest {
         osoba.setImie(dane_osoba[1]);
         osoba.setNazwisko(dane_osoba[2]);
         osoba.setEmail(dane_osoba[3]);
-<<<<<<< HEAD
-=======
         osoba.setIdProjektu(Integer.parseInt(dane_osoba[4]));
->>>>>>> origin/g1
         osoba.setRola(Rola.fromString(dane_osoba[5]));
 
         return osoba;
@@ -94,55 +80,13 @@ public class FasadaTest {
 
     public ArrayList<Osoba> osoby() {
         ArrayList<Osoba> osoby = new ArrayList();
-<<<<<<< HEAD
-        String dane_osoba1[] = {"1", "imie1", "nazwisko1", "email1", "1", "Kierownik projektu"};
-=======
         String dane_osoba1[] = {"1", "imie1", "nazwisko1", "email1", "1", "Tester"};
->>>>>>> origin/g1
         String dane_osoba2[] = {"1", "imie2", "nazwisko2", "email2", "2", "Programista"};
         osoby.add(osoba(dane_osoba1));
         osoby.add(osoba(dane_osoba2));
 
         return osoby;
     }
-<<<<<<< HEAD
-    
-    public Projekt projekt(String data[]) {
-        Projekt projekt = new Projekt();
-        projekt.setNazwa(data[0]);
-        projekt.setData_rozpoczecia(new Date());
-        projekt.setData_zakonczenia(null);
-        projekt.setStatus(Integer.parseInt(data[1]));
-
-        return projekt;
-    }
-
-    public ArrayList<Projekt> projekty() {
-        ArrayList<Projekt> projekty = new ArrayList();
-        String dane_projekt1[] = {"Nazwa1", "1"};
-        String dane_projekt2[] = {"Nazwa2", "2"};
-        projekty.add(projekt(dane_projekt1));
-        projekty.add(projekt(dane_projekt2));
-
-        return projekty;
-    }
-    
-    public Ryzyko ryzyko(String data[]) {
-        Ryzyko ryzyko = new Ryzyko();
-        
-        ryzyko.setNazwa(data[0]);
-        ryzyko.setOpis(data[1]);
-        ryzyko.setPrwdWystapienia(Float.parseFloat(data[2]));
-        ryzyko.setKosztWystapienia(Double.parseDouble(data[3]));
-        ryzyko.setDataZgloszenia(new Date());
-        ryzyko.setDataZakonczenia(null);
-        ryzyko.setAktywne(true);
-        
-        return ryzyko;
-    }
-    
-=======
->>>>>>> origin/g1
 
     /**
      * Test of getListaKlientow method, of class Fasada.
@@ -204,19 +148,11 @@ public class FasadaTest {
     public void testGetProjekty() {
         System.out.println("getProjekty");
         Fasada instance = new Fasada();
-<<<<<<< HEAD
-        
-        ArrayList<Projekt> expResult = projekty();
-        instance.setProjekty(expResult);
-        ArrayList<Projekt> result = instance.getProjekty();
-        assertEquals(expResult, result);
-=======
         ArrayList<Projekt> expResult = null;
         ArrayList<Projekt> result = instance.getProjekty();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
->>>>>>> origin/g1
     }
 
     /**
@@ -225,19 +161,11 @@ public class FasadaTest {
     @Test
     public void testSetProjekty() {
         System.out.println("setProjekty");
-<<<<<<< HEAD
-        ArrayList<Projekt> projekty = projekty();
-        Fasada instance = new Fasada();
-        instance.setProjekty(projekty);
-        ArrayList<Projekt> result = instance.getProjekty();
-        assertEquals(projekty, result);
-=======
         ArrayList<Projekt> projekty = null;
         Fasada instance = new Fasada();
         instance.setProjekty(projekty);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
->>>>>>> origin/g1
     }
 
     /**
@@ -246,21 +174,6 @@ public class FasadaTest {
     @Test
     public void testAddRisk() {
         System.out.println("addRisk");
-<<<<<<< HEAD
-        String daneKierownika = "email1";
-        String[] daneRyzyka = {"nazwa", "opis", "0.9", "1234"};
-        ArrayList<Osoba> osoby = osoby();
-        String dane_projekt1[] = {"Nazwa1", "1"};
-        
-        Fasada instance = new Fasada();
-        instance.setOsoby(osoby);
-        
-        instance.addProjekt(daneKierownika, dane_projekt1);
-        
-        int expResult = 0;
-        int result = instance.addRisk(daneKierownika, daneRyzyka);
-        assertEquals(expResult, result);
-=======
         String daneKierownika = "";
         String[] daneRyzyka = null;
         Fasada instance = new Fasada();
@@ -269,33 +182,12 @@ public class FasadaTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
->>>>>>> origin/g1
     }
 
     /**
      * Test of modelRisks method, of class Fasada.
      */
     @Test
-<<<<<<< HEAD
-    public void testModelRisks() {
-        System.out.println("getRisks");
-        String daneKierownika = "email1";
-        String[] daneRyzyka = {"nazwa", "opis", "0.9", "1234.0", (new Date()).toString(), "", "true"};
-        ArrayList<Osoba> osoby = osoby();
-        String dane_projekt1[] = {"Nazwa1", "1"};
-        
-        Fasada instance = new Fasada();
-        instance.setOsoby(osoby);
-        
-        instance.addProjekt(daneKierownika, dane_projekt1);
-        instance.addRisk(daneKierownika, daneRyzyka);
-        
-        Object[][] expResult = new Object[1][];
-        expResult[0] = daneRyzyka;
-        Object[][] result = instance.modelRisks();
-        assertArrayEquals(expResult, result);
-
-=======
     public void testGetRisks() {
         System.out.println("getRisks");
         Fasada instance = new Fasada();
@@ -304,7 +196,6 @@ public class FasadaTest {
         assertArrayEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
->>>>>>> origin/g1
     }
 
     /**
@@ -346,11 +237,7 @@ public class FasadaTest {
         String dane_osoba2[] = {"1", "imie2", "nazwisko2", "email2", "2", "Programista"};
         Fasada instance = new Fasada();
         Osoba expResultForCorrectData = osoba(dane_osoba1);
-<<<<<<< HEAD
-        Object reultForCorrectData = instance.dodajOsobe(dane_osoba1);
-=======
         Osoba reultForCorrectData = instance.dodajOsobe(dane_osoba1);
->>>>>>> origin/g1
         instance.dodajOsobe(dane_osoba2);
         assertEquals(expResultForCorrectData, reultForCorrectData);
         int expListLength = 2;
@@ -366,11 +253,7 @@ public class FasadaTest {
         Fasada instance = new Fasada();
         instance.setOsoby(osoby());
         Object[][] expResult = new Object[instance.getOsoby().size()][];
-<<<<<<< HEAD
-        String[] dane1 = {"imie1", "nazwisko1", "email1", "1", "Kierownik projektu"};
-=======
         String[] dane1 = {"imie1", "nazwisko1", "email1", "1", "Tester"};
->>>>>>> origin/g1
         String[] dane2 = {"imie2", "nazwisko2", "email2", "2", "Programista"};
         expResult[0] = dane1;
         expResult[1] = dane2;
@@ -424,19 +307,11 @@ public class FasadaTest {
     public void testPobierzTabliceKierownikow() {
         System.out.println("pobierzTabliceKierownikow");
         Fasada instance = new Fasada();
-<<<<<<< HEAD
-        instance.setOsoby(osoby());
-        Object[] expResult = new Object[1];
-        expResult[0] = "email1";
-        Object[] result = instance.pobierzTabliceKierownikow();
-        assertArrayEquals(expResult, result);
-=======
         Object[] expResult = null;
         Object[] result = instance.pobierzTabliceKierownikow();
         assertArrayEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
->>>>>>> origin/g1
     }
 
 }
